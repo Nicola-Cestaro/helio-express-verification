@@ -3,18 +3,6 @@
 
 // app.js
 // Set up channel
-const broadcast = new BroadcastChannel('count-channel');
-
-// Listen to the response
-broadcast.onmessage = (event) => {
-    //console.log('Received', event.data);
-    window.localStorage.setItem("id", JSON.stringify(event.data));
-};
-
-// Send first request
-broadcast.postMessage({
-  type: 'INCREASE_COUNT',
-});
 
 chrome.storage.local.get(["data"], ({ data }) => {
     //console.log('Received', data);
@@ -28,13 +16,6 @@ chrome.storage.local.get(["data"], ({ data }) => {
         });
 
   });
-//console.log('init');
-
-function updateCounter(counter){
-    const broadcast = new BroadcastChannel('counter');
-    //console.log(counter);
-    broadcast.postMessage(counter);
-}
 
 function openURL(url){
     chrome.runtime.sendMessage({message: "openURL",body: url},
@@ -43,8 +24,4 @@ function openURL(url){
             //console.log(response);
         }
     });
-}
-
-function consolelog(log){
-    //console.log(log);
 }

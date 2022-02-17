@@ -1,8 +1,3 @@
-chrome.extension.onMessage.addListener(function(msg, sender, sendResponse) {
-    console.log(msg);
-   document.querySelectorAll("#counterinit")[0].innerHTML = msg.action.toString();
-});
-
 function addCartButton() {
     const el = document.createElement('button');
     el.style.zIndex = '99999';
@@ -29,7 +24,7 @@ function addCartButton() {
     const s = document.createElement("input");
     s.style.paddingRight = '10px';
     s.height = 30;
-    s.src = chrome.extension.getURL("icons/minilogo.png");
+    s.src = chrome.runtime.getURL("icons/minilogo.png");
     s.type = "image";
 
     const em = document.createElement('button');
@@ -156,7 +151,7 @@ async function addCartClick() {
         const s = document.createElement("input");
         s.style.paddingLeft = '10px';
         s.height = 30;
-        s.src = chrome.extension.getURL("icons/check-circle.gif");
+        s.src = chrome.runtime.getURL("icons/check-circle.gif");
         s.type = "image";
         
         const button = document.getElementById("intiexp");
