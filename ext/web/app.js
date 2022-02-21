@@ -18,10 +18,5 @@ chrome.storage.local.get(["data"], ({ data }) => {
   });
 
 function openURL(url){
-    chrome.runtime.sendMessage({message: "openURL",body: url},
-    function(response) {
-        if (!response.success){
-            //console.log(response);
-        }
-    });
+    window.open(url, '_blank').focus();
 }

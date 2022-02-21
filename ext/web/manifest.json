@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "version": "0.1.2",
+    "version": "0.1.3",
     "name": "Helio Express",
     "short_name": "Helio Express",
     "description": "Agregue productos de varios comercios electrónicos a su carrito Helio Express y los compraremos por usted y se los enviaremos.",
@@ -9,8 +9,7 @@
         "sandbox": "sandbox allow-scripts; script-src 'self'; object-src 'self'"
     },
     "permissions": [
-        "storage",
-        "tabs"
+        "storage"
     ],
     "host_permissions": [
         "*://*.helioexpress.com/*",
