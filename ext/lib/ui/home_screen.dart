@@ -288,7 +288,7 @@ class HomeScreenState extends State<HomeScreen> {
 
                         try {
                          var response = await Dio().post(
-                            'https://yzcl5rpmmg.execute-api.us-east-1.amazonaws.com/Prod/woocommerceProductCreation',
+                            'https://execute-api.us-east-1.amazonaws.com/Prod/woocommerceProductCreation',
                             data: jsonEncode(globals.productsList.map((e) => jsonEncode(e.getMap())).toList()),
                             options: Options(
                               headers: {
